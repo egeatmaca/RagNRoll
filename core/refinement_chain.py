@@ -1,4 +1,3 @@
-import nltk
 from .gpt import GPT
 
 

@@ -34,11 +34,12 @@ class SemanticSearch:
                 time.sleep(5)
                 continue
 
-    def add(self, documents: list[str], ids: list[str] = None, metadatas: list[str] = None):
-        embeddings = self.embedding_function(documents)
-        ids = [str(uuid.uuid4()) for _ in range(len(documents))] if not ids else ids
-        metadatas = [None] * len(documents) if not metadatas else metadatas
-        self.collection.add(documents=documents, ids=ids, embeddings=embeddings, metadatas=metadatas)
+    def add(self, documents: list[str], metadatas: list[str] = None):
+        chunks = self.chunk(documents)
+        embeddings = self.embedding_function(chunks)
+        ids = [str(uuid.uuid4()) for _ in range(len(chunks))]
+        metadatas = [None] * len(chunks) if not metadatas else metadatas
+        self.collection.add(documents=chunks, ids=ids, embeddings=embeddings, metadatas=metadatas)
 
     def query(self, query_text: str, n_results: int = 1):
         query_embeddings = self.embedding_function([query_text])
