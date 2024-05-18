@@ -4,6 +4,7 @@ import chromadb
 from chromadb.config import Settings
 from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
 import time
+from core.chunker import Chunker
 
 
 class SemanticSearch:
@@ -35,10 +36,12 @@ class SemanticSearch:
                 continue
 
     def add(self, documents: list[str], metadatas: list[str] = None):
-        chunks = self.chunk(documents)
+        chunker = Chunker()
+        chunks = chunker.chunk(documents)
         embeddings = self.embedding_function(chunks)
         ids = [str(uuid.uuid4()) for _ in range(len(chunks))]
         metadatas = [None] * len(chunks) if not metadatas else metadatas
+        print('LEN:', len(chunks), len(embeddings), len(ids), len(metadatas))
         self.collection.add(documents=chunks, ids=ids, embeddings=embeddings, metadatas=metadatas)
 
     def query(self, query_text: str, n_results: int = 1):
@@ -51,5 +54,5 @@ class SemanticSearch:
             doc_id = doc_name.replace('.txt', '').strip()
             with open(doc_path, 'r', encoding='utf-8', errors='ignore') as doc:
                 document = doc.read()
-                self.add(documents=[document], ids=[doc_id])
+                self.add(documents=[document])
             print(f'Document {doc_id} injected!')

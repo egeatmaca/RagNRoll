@@ -11,7 +11,7 @@ class RAG:
                  chromadb_host=None, 
                  chromadb_port=None, 
                  chromadb_collection='documents'):
-        self.gpt = GPT(gpt=gpt, gpt_threads=gpt_threads)
+        self.gpt = GPT(gpt=gpt, n_threads=gpt_threads)
         self.semantic_search = SemanticSearch(
             model_name=sentence_transformer, 
             similarity=similarity, 
@@ -20,7 +20,7 @@ class RAG:
             collection=chromadb_collection
         )
 
-    def retrieve_documents(self, prompt, n_results=1):
+    def retrieve_documents(self, prompt, n_results=5):
         search_results = self.semantic_search.query(prompt, n_results)
         print('Search Results:', search_results)
         documents = search_results['documents'][0]
@@ -32,9 +32,9 @@ class RAG:
         prompt = context + '\n\n' + prompt
         return prompt
 
-    def generate(self, prompt, n_results=1):
+    def generate(self, prompt, n_results=5):
         documents = self.retrieve_documents(prompt, n_results)
         prompt = self.augment_prompt(prompt, documents)
-        generated_text = self.gpt.generate(prompt, n_batch=self.gpt_threads)
+        generated_text = self.gpt.generate(prompt)
         print('Generated Text:', generated_text)
         return generated_text
