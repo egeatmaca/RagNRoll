@@ -1,6 +1,5 @@
-from gpt4all import GPT4All
-import multiprocessing
 from core.semantic_search import SemanticSearch
+from core.gpt import GPT
 
 
 class RAG:
@@ -12,8 +11,7 @@ class RAG:
                  chromadb_host=None, 
                  chromadb_port=None, 
                  chromadb_collection='documents'):
-        self.gpt_threads = gpt_threads if gpt_threads else multiprocessing.cpu_count()
-        self.gpt = GPT4All(model_name=gpt, n_threads=self.gpt_threads)
+        self.gpt = GPT(gpt=gpt, gpt_threads=gpt_threads)
         self.semantic_search = SemanticSearch(
             model_name=sentence_transformer, 
             similarity=similarity, 
