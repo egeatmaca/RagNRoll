@@ -1,0 +1,4 @@
+What are some challenges of using RAG with large or complex knowledge bases?
+
+ Information overload: Large knowledge bases can overwhelm the retrieval process, making it difficult to identify the most relevant information.
+ Data inconsistency: Knowledge bases may contain inconsistencies or errors, which can affect the accuracy of RAG outputs.

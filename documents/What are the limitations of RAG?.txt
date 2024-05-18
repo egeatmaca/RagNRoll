@@ -1,0 +1,4 @@
+What are the limitations of RAG?
+
+ Knowledge Base Reliance: The quality of RAG outputs depends heavily on the quality and comprehensiveness of the external knowledge base.
+ Integration Complexity: Integrating RAG with existing LLM systems can be complex.

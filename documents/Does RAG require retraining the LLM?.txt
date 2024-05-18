@@ -1,0 +1,3 @@
+Does RAG require retraining the LLM?
+
+No, a major advantage of RAG is that it doesn't require retraining the LLM.  Instead, it leverages the LLM's existing capabilities and augments them with external knowledge.

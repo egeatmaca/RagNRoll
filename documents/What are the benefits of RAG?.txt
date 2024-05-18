@@ -1,0 +1,5 @@
+What are the benefits of RAG?
+
+ Accuracy: RAG ensures LLMs have access to up-to-date, reliable information, leading to more accurate responses.
+ Trustworthiness: By citing sources, RAG allows users to verify the information presented in the response.
+ Improved Performance: RAG can enhance the overall quality and coherence of LLM-generated text.

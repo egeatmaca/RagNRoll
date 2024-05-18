@@ -1,0 +1,5 @@
+How does RAG work?
+
+1. Retrieval: When you ask a question, RAG first searches an external knowledge base for relevant information.
+2. Augmentation: The retrieved information is then fed to the LLM, along with your question.
+3. Generation: The LLM uses this combined knowledge to generate a response that's both informative and relevant to your query.

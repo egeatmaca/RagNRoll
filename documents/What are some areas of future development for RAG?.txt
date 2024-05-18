@@ -1,0 +1,4 @@
+What are some areas of future development for RAG?
+
+ Improved reasoning:  Researchers are exploring ways for RAG to not just retrieve information but also reason and make inferences based on the retrieved knowledge.
+ Explainability:  Enhancing the explainability of RAG systems will help users better understand the source and reasoning behind the generated text.

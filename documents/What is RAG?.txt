@@ -1,0 +1,3 @@
+What is RAG?
+
+RAG stands for Retrieval-Augmented Generation. It's a technique that combines large language models (LLMs) with external knowledge bases to improve the accuracy and reliability of AI-generated text.

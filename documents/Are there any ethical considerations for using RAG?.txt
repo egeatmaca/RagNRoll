@@ -1,0 +1,4 @@
+Are there any ethical considerations for using RAG?
+
+ Bias: Biases present in the underlying knowledge base can be reflected in the RAG outputs. It's important to consider the potential for bias and ensure the knowledge base is trustworthy.
+ Transparency:  Understanding how RAG arrives at its answers is crucial. Some RAG systems allow users to see the retrieved information alongside the generated text.
