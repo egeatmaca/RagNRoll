@@ -1,2 +1,2 @@
 # RagNRoll
- A template for building RAG applications
+ Template for RAG Applications 
