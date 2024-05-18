@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+  
+body {
+    background: #0b1966;
+    color: #ededed;
+    font-family: 'Roboto', sans-serif;
+}
+
+.title {
+    text-align: center;
+    margin: 0 auto 5vh;
+    font-size: 200%;
+}
+
+.chat {
+    width: 80vw;
+    background: #202da0;
+    border: 1px solid #152374;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #152374;
+    margin: 0 auto;
+    padding: 1%;
+}
+
+.messages {
+    height: 67.5vh;
+    overflow: auto;
+    padding: 1%;
+}
+
+.message {
+    border-bottom: 1px solid #152374;
+    margin: 10px;
+    padding: 10px;
+}
+
+.message a {
+    color: #ededed;
+}
+
+.user-message {
+    text-align: right;
+}
+
+.input {
+    width: 78vw;
+}
+
+.input input[type="text"] {
+    width: 85%;
+    padding: 10px;
+    border: 1px solid #152374;
+    border-radius: 5px;
+    background-color: #ededed;
+}
+
+.input input[type="submit"] {
+    width: 10%;
+    float: inline-end;
+    padding: 10px;
+    border: 1px solid #152374;
+    border-radius: 5px;
+    background-color: #ededed;
+}
+
+.bot-message {
+    position: relative;
+    text-align: left;
+}
+
+.answer-container {
+    margin-bottom: 2.5%;
+}
+
+.fake-chat .messages {
+    height: 70vh;
+}
+
+.chat .chat-title {
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .header {
+        margin-bottom: 7.5%;
+    }
+
+    .input input[type="text"] {
+        width: 75%;
+    }
+
+    .input input[type="submit"] {
+        width: 15%;
+    }
+
+    .chat .chat-title{
+        font-size: 90%;
+    }
+}
+
+@keyframes dot {
+    0%, 20% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.loading-message span {
+    animation-name: dot;
+    animation-duration: 2s; /* Increase the duration for a slower animation */
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out; /* Use ease-in-out for a smoother animation */
+}
+
+.loading-message span:nth-child(2) {
+    animation-delay: 0.4s; /* Increase the delay for a slower animation */
+}
+
+.loading-message span:nth-child(3) {
+    animation-delay: 0.8s; /* Increase the delay for a slower animation */
+}
